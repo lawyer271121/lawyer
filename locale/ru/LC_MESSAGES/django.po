@@ -158,8 +158,6 @@ msgid "Log out"
 msgstr "Выход"
 
 #: .\templates\base.html:69
-#, fuzzy
-#| msgid "Log in"
 msgid "Log In"
 msgstr "Вход"
 
