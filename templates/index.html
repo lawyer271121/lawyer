@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "App name" %}{% endblock title %}
+{% block header %}
+	<script src={% static "js/scroll.js" %}></script>
+	<!-- Иконки: https://fontawesome.com/v5.15/icons -->
+	
+{% endblock header %}
+{% block content %}
+	<div class="jumbotron">
+		<div class="row justify-content-center">
+			<div>
+			{% if LANGUAGE_CODE == 'kk' %}
+				<h1>"Жәрдемдесу және құқық" құқықтық көмек орталығы</h1>
+				<p>Медиация рәсімі арқылы құқықтық көмек көрсету және жанжалдарды реттеу</p>
+				<p><a href="#benefits" class="btn btn-primary jbutton">Артықшылықтары</a></p>
+			{% else %}
+				<h1>Центр правовой помощи  «Содействие и право»</h1>
+				<p>Оказание правовой помощи и урегулирование конфликтов путем процедуры медиации</p>
+				<p><a href="#benefits" class="btn btn-primary jbutton">Преимущества</a></p>			
+			{% endif %}	
+			</div>
+		</div>
+	</div>
+	<!-- Преимущества ================================================== -->	
+	<div class="container">
+		<section id="benefits">
+		{% if LANGUAGE_CODE == 'kk' %}
+			<h2 class="text-center">"Жәрдемдесу және құқық"<br>Құқықтық көмек орталығының<br>артықшылықтары қандай?</h2>
+			<p>Біздің командада адвокатура, Құқықтану, сәулет, психология саласындағы жоғары білікті мамандар, сондай-ақ сертификатталған медиаторлар (жанжал жағдайындағы тәуелсіз делдалдар) бар.</p>
+			<div class="row">
+				<div class="col-md-4 text-center"> <a href="#"> <i class="fa fa-connectdevelop fa-3x"></i> </a>
+					<h4>Құпиялылық</h4>
+					<p>Біздің орталықтың мамандары біздің клиенттер туралы толық құпиялылықты сақтайды және деректер мен берілген ақпараттың қауіпсіздігіне кепілдік береді</p>
+				</div>
+				<div class="col-md-4 text-center"> <a href="#"><i class="fa fa-american-sign-language-interpreting fa-3x"></i></a>
+					<h4>Теңдік</h4>
+					<p>Орталық мамандары кездесуді клиенттер үшін ең қолайлы уақытқа белгілеу үшін бар күш-жігерін салады.Әкімшіліктің икемді саясаты біздің клиенттеріміз үшін тиімді шарттарды талқылауға мүмкіндік береді.</p>
+				</div>
+				<div class="col-md-4 text-center"> <a href="#"><i class="fa fa-database fa-3x"></i></a>
+					<h4>Жауапкершілік</h4>
+					<p>Орталық басшылығы өз мамандарының біліктілігін растайды, ал әкімшілер жұмыс барысында туындайтын кез келген қиындықтарды жедел шешеді.</p>
+				</div>
+			</div>
+			<div class="text-center">
+				<a href="{% url 'services' %}" class="btn btn-primary jbutton">Біздің қызметтер</a>
+			</div>
+		{% else %}
+			<h2 class="text-center">В чём преимущества<br>Центра правовой помощи<br>«Содействие и право»?</h2>
+			<p>В нашей команде имеются высококвалифицированные специалисты в области адвокатуры, юриспруденции,  архитектуры, психологии, а так же сертифицированные медиаторы (независимые посредники в конфликтных ситуациях). </p>
+			<div class="row">
+				<div class="col-md-4 text-center"> <a href="#"> <i class="fa fa-connectdevelop fa-3x"></i> </a>
+					<h4>КОНФИДЕНЦИАЛЬНОСТЬ</h4>
+					<p>Специалисты нашего центра соблюдают полную конфиденциальность о наших клиентах и гарантируют безопасность данных и предоставленной информации</p>
+				</div>
+				<div class="col-md-4 text-center"> <a href="#"><i class="fa fa-american-sign-language-interpreting fa-3x"></i></a>
+					<h4>РАВНОПРАВИЕ</h4>
+					<p>Специалисты центра приложат все усилия для того, чтобы назначить встречу на наиболее удобное для клиентов время.Гибкая политика администрации позволит обсудить выгодные условия для наших клиентов.</p>
+				</div>
+				<div class="col-md-4 text-center"> <a href="#"><i class="fa fa-database fa-3x"></i></a>
+					<h4>ОТВЕТСТВЕННОСТЬ</h4>
+					<p>Руководство центра подтверждает квалификацию своих специалистов, а администраторы оперативно разрешают любые возникающие в ходе работы затруднения.</p>
+				</div>
+			</div>
+			<div class="text-center">
+				<a href="{% url 'services' %}" class="btn btn-primary jbutton">Наши услуги</a>
+			</div>
+		{% endif %}	
+		</section>
+	</div>
+	<!-- Клиенты ================================================== -->
+	<div class="container">
+		<section id="clients">
+			<div class="row justify-content-center">
+			{% if LANGUAGE_CODE == 'kk' %}
+				<h2 class="text-center">Біздің клиенттер</h2>						
+			{% else %}
+				<h2 class="text-center">Наши клиенты</h2>						
+			{% endif %}	
+			</div>
+			<div class="row">
+				<div class="col-md-4">				
+					<div class="card">
+						<div class="card-header">
+						{% if LANGUAGE_CODE == 'kk' %}
+							<h5>Барбершоп «KingBarber»</h5>
+						{% else %}
+							<h5>Барбершоп «KingBarber»</h5>
+						{% endif %}								
+						</div>
+						<div class="card-body" style="width:100%; max-width:400px;">					
+							<div class="row">
+								<div class="col-md-8">
+								{% if LANGUAGE_CODE == 'kk' %}
+									<p>Қарағанды, Бұқар Жырау даңғылы 79/2, 8 (775) 118-3310</p>
+								{% else %}
+									<p>Караганда,просп. Бухар-Жырау 79/2, 8(775)118-3310</p>
+								{% endif %}	
+								</div>								
+								<div class="col-md-4">								
+									<img style="width:100%; max-width:400px;" src="{% static 'images/clients1.png' %}" alt="">
+								</div>								
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+						{% if LANGUAGE_CODE == 'kk' %}
+							<h5>«OzonTech» ЖШС</h5>
+						{% else %}
+							<h5>ТОО «OzonTech»</h5>
+						{% endif %}	
+						</div>
+						<div class="card-body" style="width:100%; max-width:400px;">					
+							<div class="row">
+								<div class="col-md-8">
+								{% if LANGUAGE_CODE == 'kk' %}
+									<p>Қарағанды, Нұрсұлтан Назарбаев даңғылы, 33/3</p>
+								{% else %}
+									<p>Караганда, просп. Нурсултана Назарбаева, 33/3</p>
+								{% endif %}	
+								</div>								
+								<div class="col-md-4">								
+									<img style="width:100%; max-width:400px;" src="{% static 'images/clients2.png' %}" alt="">
+								</div>								
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+							<h5>Orhun Medical</h5>
+						</div>
+						<div class="card-body" style="width:100%; max-width:400px;">					
+							<div class="row">
+								<div class="col-md-8">
+								{% if LANGUAGE_CODE == 'kk' %}
+									<p>Қарағанды, ш / а. Дала-4 2/3, 8(7212)922-090 </p>
+								{% else %}
+									<p>Караганда, мкр. Степной-4 2/3, 8(7212)922-090 </p>
+								{% endif %}										
+								</div>								
+								<div class="col-md-4">								
+									<img style="width:100%; max-width:400px;" src="{% static 'images/clients3.png' %}" alt="">
+								</div>								
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><p>
+						</div>
+					</div>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="col-md-4">				
+					<div class="card">
+						<div class="card-header">
+						{% if LANGUAGE_CODE == 'kk' %}
+							<h5>Бақша орталығы</h5>
+						{% else %}
+							<h5>Садовый центр</h5>
+						{% endif %}								
+						</div>
+						<div class="card-body" style="width:100%; max-width:400px;">					
+							<div class="row">
+								<div class="col-md-8">
+								{% if LANGUAGE_CODE == 'kk' %}
+									<p>Сатыбалдин көшесі 11/2, Қарағанды, +77015336266</p>
+								{% else %}
+									<p>улица Сатыбалдина 11/2, Караганда, +77015336266</p>
+								{% endif %}	
+								</div>								
+								<div class="col-md-4">								
+									<img style="width:100%; max-width:400px;" src="{% static 'images/clients4.png' %}" alt="">
+								</div>								
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+						{% if LANGUAGE_CODE == 'kk' %}
+							<h5>Автокөлікті Жалға Алу Сүйікті</h5>
+						{% else %}
+							<h5>Автопрокат Фаворит</h5>
+						{% endif %}								
+						</div>
+						<div class="card-body" style="width:100%; max-width:400px;">					
+							<div class="row">
+								<div class="col-md-8">
+									<p>+77002085080</p>
+								</div>								
+								<div class="col-md-4">								
+									<img style="width:100%; max-width:400px;" src="{% static 'images/clients5.png' %}" alt="">
+								</div>								
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+						{% if LANGUAGE_CODE == 'kk' %}
+							<h5>"Күн" балабақшасы</h5>
+						{% else %}
+							<h5>Детский сад "Солнышко"</h5>
+						{% endif %}								
+						</div>
+						<div class="card-body" style="width:100%; max-width:400px;">					
+							<div class="row">
+								<div class="col-md-8">
+								{% if LANGUAGE_CODE == 'kk' %}
+									<p>Құрылысшылар даңғылы 1а, Қарағанды, +77014167960</p>
+								{% else %}
+									<p>проспект Строителей 1а, Караганда, +77014167960</p>
+								{% endif %}	
+								</div>								
+								<div class="col-md-4">								
+									<img style="width:100%; max-width:400px;" src="{% static 'images/clients6.png' %}" alt="">
+								</div>								
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><p>
+						</div>
+					</div>
+				</div>			
+			</div>
+			<div class="text-center" style="margin-top: 20px;">
+			{% if LANGUAGE_CODE == 'kk' %}
+				<a href="#reviews" class="btn btn-primary jbutton">Клиенттердің пікірлері</a>
+			{% else %}
+				<a href="#reviews" class="btn btn-primary jbutton">Отзывы клиентов</a>
+			{% endif %}					
+			</div>
+		</section>
+	</div>		
+	<!-- Отзывы================================================== -->
+	<div class="container">
+		<section id="reviews">
+		{% if LANGUAGE_CODE == 'kk' %}
+			<h2 class="text-center">Клиенттердің пікірлері</h2>
+		{% else %}
+			<h2 class="text-center">Отзывы клиентов</h2>
+		{% endif %}	
+			<div class="row">
+				{% if reviews.count > 0 %}
+					{% for r in reviews %}
+						<div class="col-lg-4">
+							<p><strong>{{ r.user.username }}</strong></p>
+							<p><i>{{ r.details }}</i></p>									
+						</div>
+					{% endfor %}
+				{% endif %}						
+			</div>
+		</section>		
+	</div>
+		<!-- Призыв к действию ==================================================
+		<section class="action">
+			<div class="container">
+                <div class="row">
+                    <h2>Выгода при заказе сегодня</h2>
+                    <p>Какой-то текст:</p>
+                    <button class="btn btn-default">Заказать сейчас!</button>
+                </div>
+            </div>		
+		</section>
+	-->		
+{% endblock content %}
+
+

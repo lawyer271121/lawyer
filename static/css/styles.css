@@ -1,0 +1,91 @@
+:root {	
+	--light-background: #F0FFFF;
+	--dark-background: #E0FFFF;
+    --main-text:#000080;
+	--attention-text: #FF00FF;
+}
+body {	
+	color: navy;
+	font-family: Geneva, Arial, Helvetica, sans-serif;	
+}
+/* fon */
+
+.jumbotron {
+    background: #f5f5f5 url(../images/background.jpg) top center no-repeat;
+	background-size: cover; 
+	height: 800px;   
+    max-width: 100%;
+    padding-top: 20px;    
+    margin-top: 20px;
+	text-align: center;
+	color: azure;
+}
+
+.jumbotron .h1{
+	color: azure;	
+}
+
+#benefits {
+	margin-top: 20px;
+    color: darkslategray;
+	background: lemonchiffon;
+	max-width: 100%;
+	padding: 20px;	
+}
+
+#clients {
+	margin-top: 20px;
+    color: navy;
+	background: aliceBlue;
+	max-width: 100%;
+	padding: 20px;	
+}
+
+#reviews {
+    margin-top: 20px;
+    color: darkred;
+	background: peachpuff;
+	max-width: 100%;
+	padding: 20px;	
+}
+
+/*  Карточки */
+.card {	
+	margin-top: 10px !important;
+	background-color: aliceBlue !important;	
+}
+.card-header {	
+	background-color: lightcyan !important;
+	color: navy !important;	
+}
+.card-body {	
+	background-color: aliceBlue !important;		
+}
+.card-footer {	
+	background-color: lightcyan !important;
+	color: navy !important;	
+}
+
+.copyrights {	
+	padding: 1px;
+	margin-top: 5px;
+	background-color:  lightcyan;	
+	color:  navy;	
+}
+/*  Таблицы */
+table.dataTable thead {
+	color: navy;
+	background-color: lightcyan;
+}
+table.dataTable tbody {
+	background-color: aliceBlue;
+}
+table.dataTable td {
+	background-color: aliceBlue;
+	color: navy;	
+}
+table {	
+	background-color: aliceBlue;
+	color: navy;
+}
+

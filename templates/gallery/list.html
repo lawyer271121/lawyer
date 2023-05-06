@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Gallery" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Gallery" %}</h2>
+{% if gallery.count > 0 %}	
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="max-width:600px; margin: 0 auto">
+	<div class="carousel-inner">
+		{% for g in gallery %}
+			{% if forloop.counter == 1 %}
+			<div class="carousel-item active">
+			{% else %}
+			<div class="carousel-item">
+			{% endif %}
+				{% if g.photo.url == "/ media /images/gallery1.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery1.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery2.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery2.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery3.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery3.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery4.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery4.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery5.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery5.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery6.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery6.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery7.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery7.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery8.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery8.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery9.jpeg" %}
+					<img class="d-block w-100" src="{% static 'images/gallery9.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% elif g.photo.url == "/ media /images/gallery10.jpeg" %}
+					<img class="d-block w-100" 
+					src="{% static 'images/gallery10.jpeg' %}" alt="{{ g.photo.url }}" title="{{ g.details }}">    
+				{% else %}
+					{% if g.photo.url != None %}
+						<img class="d-block w-100" src="{{ g.photo.url}}" alt="{{ g.title }}">					
+					{% endif %}
+				{% endif %}
+			
+				<!-- {% if g.photo.url != None %} -->
+				<!-- <img class="d-block w-100" src="{{ g.photo.url}}" alt="{{ g.title }}" title="{{ g.details }}"> -->
+				<!-- {% endif %}					 -->
+				<p>{{ g.title }}</p>
+			</div>
+		{% endfor %}		
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Prev</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+
+{% endif %}
+{% endblock content %}
+

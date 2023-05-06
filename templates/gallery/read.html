@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% trans "Read" %}{% endblock header %}
+{% block content %}
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h4>{{ gallery.title }}</h4>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-8">				
+					<table>		
+						<tr>
+							<td><strong>{% trans "details" %}</strong>&nbsp:</td>
+							<td>{{ gallery.details }}</td>
+						</tr>												
+					</table>				
+				</div>
+				<div class="col-md-4">
+					{% if gallery.photo.url == "/ media /images/gallery1.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery1.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery2.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery2.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery3.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery3.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery4.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery4.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery5.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery5.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery6.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery6.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery7.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery7.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery8.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery8.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery9.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery9.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% elif gallery.photo.url == "/ media /images/gallery10.jpeg" %}
+						<img style="width:100%; max-width:512px; padding:10px" src="{% static 'images/gallery10.jpeg' %}" alt="{{ gallery.photo.url }}" title="{{ gallery.details }}">    
+					{% else %}
+						{% if gallery.photo.url != None %}
+							<img style="width:100%; max-width:512px; padding:10px" src="{{ gallery.photo.url}}" alt="{{ gallery.title }}">					
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>				
+		</div>
+		<div class="card-footer">				
+			<p>{{ gallery.dateg }}</p>			
+		</div>		
+	</div>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'gallery_index' %}">Назад</a>    	
+</div>
+
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="row">
+	<div class="card" style="width:100%; margin:10px">
+		<div class="card-header">
+			<h2>{% trans "Links" %}</h2>
+		</div>
+		<div class="card-body">					
+			<div class="row">
+				<h5><a href="https://egov.kz/cms/ru" target="_blank">Электронное правительство Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://www.gov.kz/memleket/entities/adilet?lang=ru" target="_blank">Министерство юстиции Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://www.gov.kz/memleket/entities/qriim?lang=ru" target="_blank">Министерство внутренних дел РК</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://office.sud.kz/" target="_blank">Судебный кабинет</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://www.gosreestr.kz/ru/" target="_blank">Реестр государственного имущества</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://online.zakon.kz/lawyer" target="_blank">ЮРИСТ</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="http://zan.gov.kz/ru/" target="_blank">Эталонный контрольный банк нормативных правовых документов Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://adilet.zan.kz/rus" target="_blank">ИПС "Әділет"</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://dogovor24.kz/" target="_blank">Юридический онлайн сервис для бизнеса в Казахстане</a></h5>
+			</div>
+		</div>
+		<div class="card-footer text-muted">
+		</div>
+	</div>	
+	
+</div>
+{% endblock content %}
